@@ -15,25 +15,25 @@ $(function() {
     })
 
     function sayToBot(message) {
-        console.log("User Message:", message)
+        // console.log("User Message:", message)
         $.ajax({
             url: 'http://localhost:5005/webhooks/rest/webhook',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
                 "message": message,
-                "sender": "Sagar"
+                "sender": "Litium"
             }),
             success: function(data, textStatus) {
                 if (data != null) {
-                    console.log("Success : " + data);
+                    // console.log("Success : " + data);
                     generate_message(data, 'user');
                 }
             },
             error: function(errorMessage) {
                 msg = "خطا در ارتباط با سرور. لطفا مجددا تلاش کنید";
                 generate_message(msg, "user");
-                console.log('Error : ' + errorMessage);
+                // console.log('Error : ' + errorMessage);
 
             }
         });
@@ -75,7 +75,7 @@ $(function() {
         if (type == 'self') {
             $("#chat-input").val('');
         }
-        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+        $(".chat-box-body").stop().animate({ scrollTop: $(".chat-box-body")[0].scrollHeight }, 1000);
     }
 
 

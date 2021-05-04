@@ -176,7 +176,8 @@ strong {
     height: 370px;
     height: auto;
     border: 1px solid #ccc;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .chat-box-body:after {
@@ -267,7 +268,7 @@ strong {
 
 .chat-logs {
     padding: 15px;
-    height: 370px;
+    min-height: 370px;
     overflow-y: auto;
     font-size: 14px;
 }
@@ -284,17 +285,17 @@ strong {
     background-position: center;
 }
 
-.chat-logs::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+.chat-box-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
     background-color: #F5F5F5;
 }
 
-.chat-logs::-webkit-scrollbar {
+.chat-box-body::-webkit-scrollbar {
     width: 5px;
     background-color: #F5F5F5;
 }
 
-.chat-logs::-webkit-scrollbar-thumb {
+.chat-box-body::-webkit-scrollbar-thumb {
     background-color: #97bbcb;
 }
 
